@@ -1,0 +1,28 @@
+/*
+Theme Name: Contrax Lite
+Description: Contrax Lite is a sleek and fully responsive theme template designed for WordPress full-site editing, fully optimized for the Gutenverse plugin. Contrax Lite is crafted specifically for construction firms, engineering companies, and independent contractors seeking a modern and professional online presence. This template package includes both a core version and a Gutenverse plugin version, offering pre-designed block patterns that make it easy to customize your site without needing to start from scratch. We’ve designed Contrax Lite to streamline your website creation process, making WordPress full-site editing a seamless and intuitive experience.
+
+
+
+
+
+Author: Jegstudio
+Author URI: https://gutenverse.com
+Theme URI: https://gutenverse.com/themes/contrax-lite/
+Version: 1.0.5
+Stable tag: 1.0.5
+Requires at least: 6.2
+Tested up to: 6.6
+Requires PHP: 7.4.21
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: contrax-lite
+Tags: grid-layout,block-patterns,block-styles,custom-background,blog,portfolio,full-site-editing
+*/
+
+:root{
+    
+}
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .block-library-block__reusable-block-container {
+    max-width: 100%;
+}
