@@ -32,9 +32,9 @@ class Asset_Enqueue {
 	public function enqueue_scripts() {
 		wp_enqueue_style( 'contrax-lite-style', get_stylesheet_uri(), array(), CONTRAX_LITE_VERSION );
 
-				wp_enqueue_style( 'contrax-preset-styling', CONTRAX_LITE_URI . '/assets/css/contrax-preset-styling.css', array(), CONTRAX_LITE_VERSION );
-		wp_enqueue_style( 'custom-styling', CONTRAX_LITE_URI . '/assets/css/custom-styling.css', array(), CONTRAX_LITE_VERSION );
-		wp_enqueue_script( 'animation-script', CONTRAX_LITE_URI . '/assets/js/animation-script.js', array(), CONTRAX_LITE_VERSION, true );
+				wp_enqueue_style( 'contrax-lite-preset-styling', trailingslashit( get_template_directory_uri() ) . '/assets/css/contrax-lite-preset-styling.css', array(), CONTRAX_LITE_VERSION );
+		wp_enqueue_style( 'contrax-lite-custom-styling', trailingslashit( get_template_directory_uri() ) . '/assets/css/contrax-lite-custom-styling.css', array(), CONTRAX_LITE_VERSION );
+		wp_enqueue_script( 'contrax-lite-animation-script', trailingslashit( get_template_directory_uri() ) . '/assets/js/contrax-lite-animation-script.js', array(), CONTRAX_LITE_VERSION, true );
 
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

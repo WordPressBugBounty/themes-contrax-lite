@@ -7,12 +7,14 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
-defined( 'CONTRAX_LITE_VERSION' ) || define( 'CONTRAX_LITE_VERSION', '1.0.5' );
+defined( 'CONTRAX_LITE_VERSION' ) || define( 'CONTRAX_LITE_VERSION', '1.1.0' );
 defined( 'CONTRAX_LITE_DIR' ) || define( 'CONTRAX_LITE_DIR', trailingslashit( get_template_directory() ) );
-defined( 'CONTRAX_LITE_URI' ) || define( 'CONTRAX_LITE_URI', trailingslashit( get_template_directory_uri() ) );
+
+defined( 'GUTENVERSE_COMPANION_REQUIRED_VERSION' ) || define( 'GUTENVERSE_COMPANION_REQUIRED_VERSION', '2.3.3' );
+defined( 'GUTENVERSE_LIBRARY_SERVER' ) || define( 'GUTENVERSE_LIBRARY_SERVER', 'https://gutenverse.com' );
 
 require get_parent_theme_file_path( 'inc/autoload.php' );
 

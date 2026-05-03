@@ -53,6 +53,7 @@ class Plugin_Notice {
 	 */
 	private function load_hooks() {
 		add_action( 'admin_notices', array( $this, 'notice_install_plugin' ) );
+		add_action( 'wp_ajax_contrax-lite_dismiss_notice', array( $this, 'dismiss_notice' ) );
 	}
 
 	/**
@@ -60,12 +61,7 @@ class Plugin_Notice {
 	 */
 	public function notice_install_plugin() {
 		// Skip if gutenverse block activated.
-		if ( defined( 'GUTENVERSE' ) ) {
-			return;
-		}
-
-		// Skip if gutenverse pro activated.
-		if ( defined( 'GUTENVERSE_PRO' ) ) {
+		if ( get_option( 'contrax-lite_dismiss_notice' ) ) {
 			return;
 		}
 
@@ -83,18 +79,20 @@ class Plugin_Notice {
 		}
 
         $active_plugins = get_option( 'active_plugins' );
-		$plugins = array();
-		foreach( $active_plugins as $active ) {
-			$plugins[] = explode( '/', $active)[0];
+		$plugins        = array();
+		foreach ( $active_plugins as $active ) {
+			$plugins[] = explode( '/', $active )[0];
 		}
-		$all_plugin = get_plugins();
+		$all_plugin          = get_plugins();
 		$plugins_required    = array(
             array(
 					'slug'       		=> 'gutenverse',
-					'title'      		=> 'Gutenverse',
-					'short_desc' 		=> 'GUTENVERSE – GUTENBERG BLOCKS AND WEBSITE BUILDER FOR SITE EDITOR, TEMPLATE LIBRARY, POPUP BUILDER, ADVANCED ANIMATION EFFECTS, 45+ FREE USER-FRIENDLY BLOCKS',
+					'title'      		=> esc_html__( 'Gutenverse', 'contrax-lite' ),
+					'short_desc' 		=> esc_html__( 'GUTENVERSE – GUTENBERG BLOCKS AND WEBSITE BUILDER FOR SITE EDITOR, TEMPLATE LIBRARY, POPUP BUILDER, ADVANCED ANIMATION EFFECTS, COMPLETE FEATURE ECOSYSTEM, 45+ FREE USER-FRIENDLY BLOCKS', 'contrax-lite' ),
 					'active'    		=> in_array( 'gutenverse', $plugins, true ),
 					'installed'  		=> $this->is_installed( 'gutenverse' ),
+					'req_version'    	=> '2.1.2',
+					'installed_version' => isset( $installed_plugins['gutenverse/gutenverse.php']['Version'] ) ? $installed_plugins['gutenverse/gutenverse.php']['Version'] : '',
 					'icons'      		=> array (
   '1x' => 'https://ps.w.org/gutenverse/assets/icon-128x128.gif?rev=3132408',
   '2x' => 'https://ps.w.org/gutenverse/assets/icon-256x256.gif?rev=3132408',
@@ -103,26 +101,42 @@ class Plugin_Notice {
 				),
 				array(
 					'slug'       		=> 'gutenverse-form',
-					'title'      		=> 'Gutenverse Form',
-					'short_desc' 		=> 'GUTENVERSE FORM – FORM BUILDER FOR GUTENBERG BLOCK EDITOR, MULTI-STEP FORMS, CONDITIONAL LOGIC, PAYMENT, CALCULATION, 15+ FREE USER-FRIENDLY FORM BLOCKS',
+					'title'      		=> esc_html__( 'Gutenverse Form', 'contrax-lite' ),
+					'short_desc' 		=> esc_html__( 'GUTENVERSE FORM – FORM BUILDER FOR GUTENBERG BLOCK EDITOR, MULTI-STEP FORMS, CONDITIONAL LOGIC, PAYMENT, CALCULATION, 15+ FREE USER-FRIENDLY FORM BLOCKS', 'contrax-lite' ),
 					'active'    		=> in_array( 'gutenverse-form', $plugins, true ),
 					'installed'  		=> $this->is_installed( 'gutenverse-form' ),
+					'req_version'    	=> '1.1.2',
+					'installed_version' => isset( $installed_plugins['gutenverse-form/gutenverse-form.php']['Version'] ) ? $installed_plugins['gutenverse-form/gutenverse-form.php']['Version'] : '',
 					'icons'      		=> array (
   '1x' => 'https://ps.w.org/gutenverse-form/assets/icon-128x128.png?rev=3135966',
 ),
 					'download_url'      => '',
+				),
+				array(
+					'slug'       		=> 'gutenverse-companion',
+					'title'      		=> esc_html__( 'Gutenverse Companion', 'contrax-lite' ),
+					'short_desc' 		=> esc_html__( 'A companion plugin designed specifically to enhance and extend the functionality of Gutenverse base themes. This plugin integrates seamlessly with the base themes, providing additional features, customization options, and advanced tools to optimize the overall user experience and streamline the development process.', 'contrax-lite' ),
+					'active'    		=> in_array( 'gutenverse-companion', $plugins, true ),
+					'installed'  		=> $this->is_installed( 'gutenverse-companion' ),
+					'req_version'    	=> '2.3.3',
+					'installed_version' => isset( $installed_plugins['gutenverse-companion/gutenverse-companion.php']['Version'] ) ? $installed_plugins['gutenverse-companion/gutenverse-companion.php']['Version'] : '',
+					'icons'      		=> array (
+  '1x' => 'https://ps.w.org/gutenverse-companion/assets/icon-128x128.png?rev=3162415',
+),
+					'download_url'      => '',
 				)
         );
-		$actions    = array();
-
+		$actions             = array();
+		$count_plugin_active = 0;
 		foreach ( $plugins_required as $plugin ) {
 			$slug   = $plugin['slug'];
 			$path   = "$slug/$slug.php";
-			$active = is_plugin_active( $path );
+			$active = in_array( $path, $active_plugins, false );
 
 			if ( isset( $all_plugin[ $path ] ) ) {
 				if ( $active ) {
 					$actions[ $slug ] = 'active';
+					++$count_plugin_active;
 				} else {
 					$actions[ $slug ] = 'inactive';
 				}
@@ -131,262 +145,288 @@ class Plugin_Notice {
 			}
 		}
 
+		$count_plugin_requiored = count( $plugins_required );
+		if ( $count_plugin_active === $count_plugin_requiored ) {
+			return;
+		}
+
+		wp_register_style( 'contrax-lite-theme-notice', false );
+		wp_enqueue_style( 'contrax-lite-theme-notice' );
+		ob_start();
 		?>
-		<style>
-            .install-gutenverse-plugin-notice {
-                border: 1px solid #E6E6EF;
-                position: relative;
-                overflow: hidden;
-                padding: 0 !important;
-                margin-bottom: 30px !important;
-                background: url( <?php echo esc_url( CONTRAX_LITE_URI . '/assets/img/background-banner.png' ); ?> );
-                background-size: cover;
-                background-position: center;
-            }
+		
+				.contrax-lite-simple-notice {
+				
+					padding: 24px !important; 
+				
+					border-left: 4px solid #007cba !important;
+				}
+				.contrax-lite-simple-notice p:first-child {
+				
+					margin-bottom: 20px; 
+					margin-top: 0;
+				}
+				.contrax-lite-simple-notice p:last-of-type {
+				
+					margin-top: 0; 
+					margin-bottom: 0;
+				}
+				.contrax-lite-simple-notice .contrax-lite-notice-title {
+					font-size: 17px;
+					font-weight: 600; 
+					display: block;
+					margin-bottom: 6px;
+				}
+				.contrax-lite-simple-notice .contrax-lite-notice-description {
+					font-size: 13px;
+					display: block;
+				
+					margin-top: 0; 
+					color: #3c434a;
+					line-height: 1.4;
+				}
+			
+				.contrax-lite-simple-notice .button-primary {
+					padding: 4px 16px !important;
+				}
 
-            .install-gutenverse-plugin-notice .gutenverse-notice-content {
-                display: flex;
-                align-items: center;
-                position: relative;
-            }
-
-            .gutenverse-notice-text, .gutenverse-notice-image {
-                width: 50%;
-            }
-
-            .gutenverse-notice-text {
-                padding: 40px 0 40px 40px;
-                position: relative;
-                z-index: 2;
-            }
-
-            .install-gutenverse-plugin-notice img {
-                max-height: 100%;
-                display: flex;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-            }
-
-            .install-gutenverse-plugin-notice:after {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 5px;
-                display: block;
-                background: linear-gradient(to bottom, #68E4F4, #4569FF, #F045FF);
-            }
-
-            .install-gutenverse-plugin-notice .notice-dismiss {
-                top: 20px;
-                right: 20px;
-                padding: 0;
-                background: white;
-                border-radius: 6px;
-            }
-
-            .install-gutenverse-plugin-notice .notice-dismiss:before {
-                content: "\f335";
-                font-size: 17px;
-                width: 25px;
-                height: 25px;
-                line-height: 25px;
-                border: 1px solid #E6E6EF;
-                border-radius: 3px;
-            }
-
-            .install-gutenverse-plugin-notice h3 {
-                margin-top: 5px;
-                margin-bottom: 15px;
-                font-weight: 600;
-                font-size: 25px;
-                line-height: 1.4em;
-            }
-
-            .install-gutenverse-plugin-notice h3 span {
-                font-weight: 700;
-                background-clip: text !important;
-                -webkit-text-fill-color: transparent;
-                background: linear-gradient(80deg, rgba(208, 77, 255, 1) 0%,rgba(69, 105, 255, 1) 48.8%,rgba(104, 228, 244, 1) 100%);
-            }
-
-            .install-gutenverse-plugin-notice p {
-                font-size: 13px;
-                font-weight: 400;
-                margin: 5px 100px 20px 0 !important;
-            }
-
-            .install-gutenverse-plugin-notice .gutenverse-bottom {
-                display: flex;
-                align-items: center;
-                margin-top: 30px;
-            }
-
-            .install-gutenverse-plugin-notice a {
-                text-decoration: none;
-                margin-right: 20px;
-            }
-
-            .install-gutenverse-plugin-notice a.gutenverse-button {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", serif;
-                text-decoration: none;
-                cursor: pointer;
-                font-size: 12px;
-                line-height: 18px;
-                border-radius: 5px;
-                background: #3B57F7;
-                color: #fff;
-                padding: 10px 15px;
-                font-weight: 500;
-                background: linear-gradient(to left, #68E4F4, #4569FF, #F045FF);
-                transition: transform 0.5s ease, color 0.5s ease;
-            }
-
-            .install-gutenverse-plugin-notice a.gutenverse-button:hover {
-                color: hsla(0, 0%, 100%, .749);
-                transform: scale(.94);
-            }
-
-            #gutenverse-install-plugin.loader:after {
-                display: block;
-                content: "";
-                border: 5px solid white;
-                border-radius: 50%;
-                border-top: 5px solid rgba(255, 255, 255, 0);
-                width: 10px;
-                height: 10px;
-                -webkit-animation: spin 2s linear infinite;
-                animation: spin 2s linear infinite;
-            }
-
-            @-webkit-keyframes spin {
-                0% {
-                    -webkit-transform: rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: rotate(360deg);
-                }
-            }
-
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-
-            @media screen and (max-width: 1024px) {
-                .gutenverse-notice-text {
-                    width: 100%;
-                }
-
-                .gutenverse-notice-image {
-                    display: none;
-                }
-            }
-        </style>
-		<script>
-        var promises = [];
-        var actions = <?php echo wp_json_encode( $actions ); ?>;
-
-        function sequenceInstall (plugins, index = 0) {
-            if (plugins[index]) {
-                var plugin = plugins[index];
-
-                switch (actions[plugin?.slug]) {
-                    case 'active':
-                        break;
-                    case 'inactive':
-                        var path = plugin?.slug + '/' + plugin?.slug;
-                        promises.push(
-                            wp.apiFetch({
-                                path: 'wp/v2/plugins/plugin?plugin=' + path,									
-                                method: 'POST',
-                                data: {
-                                    status: 'active'
-                                }
-                            }).then(() => {
-                                sequenceInstall(plugins, index + 1);
-                            }).catch((error) => {
-                            })
-                        );
-                        break;
-                    default:
-                        promises.push(
-                            wp.apiFetch({
-                                path: 'wp/v2/plugins',
-                                method: 'POST',
-                                data: {
-                                    slug: plugin?.slug,
-                                    status: 'active'
-                                }
-                            }).then(() => {
-                                sequenceInstall(plugins, index + 1);
-                            }).catch((error) => {
-                            })
-                        );
-                        break;
-                }
-            }
-
-            return;
-        };
-
-        jQuery( function( $ ) {
-            $( 'div.notice.install-gutenverse-plugin-notice' ).on( 'click', 'button.notice-dismiss', function( event ) {
-                event.preventDefault();
-                $.post( ajaxurl, {
-                    action: 'contrax-lite_set_admin_notice_viewed',
-                    nonce: '<?php echo esc_html( wp_create_nonce( 'contrax-lite_admin_notice' ) ); ?>',
-                } );
-            } );
-
-            $('#gutenverse-install-plugin').on('click', function(e) {
-                var hasFinishClass = $(this).hasClass('finished');
-                var hasLoaderClass = $(this).hasClass('loader');
-
-                if(!hasFinishClass) {
-                    e.preventDefault();
-                }
-
-                if(!hasLoaderClass && !hasFinishClass) {
-                    promises = [];
-                    var plugins = <?php echo wp_json_encode( $plugins_required ); ?>;
-                    $(this).addClass('loader').text('');
-
-                    sequenceInstall(plugins);
-                    Promise.all(promises).then(() => {						
-                        window.location.reload();
-                        $(this).removeClass('loader').addClass('finished').text('All is Done!');
-                    });
-                }
-            });
-        } );
-        </script>
-		<div class="notice is-dismissible install-gutenverse-plugin-notice">
-            <div class="gutenverse-notice-inner">
-                <div class="gutenverse-notice-content">
-                    <div class="gutenverse-notice-text">
-                        <h3><?php esc_html_e( 'Take Your Website To New Height with', 'contrax-lite' ); ?> <span>Gutenverse!</span></h3> 
-                        <p><?php esc_html_e( 'Contrax Lite theme work best with Gutenverse plugin. By installing Gutenverse plugin you may access Contrax Lite templates built with Gutenverse and get access to more than 40 free blocks, hundred free Layout and Section.', 'contrax-lite' ); ?></p>
-                        <div class="gutenverse-bottom">
-                            <a class="gutenverse-button" id="gutenverse-install-plugin" href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'themes.php?page=contrax-lite-dashboard' ), 'install-plugin_gutenverse' ) ); ?>">
-                                <?php echo esc_html( __( 'Install Required Plugins', 'contrax-lite' ) ); ?>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gutenverse-notice-image">
-                        <img src="<?php echo esc_url( CONTRAX_LITE_URI . '/assets/img/banner-install-gutenverse.png' ); ?>"/>
-                    </div>
-                </div>
-            </div>
-        </div>
+			
+				.contrax-lite-simple-notice .notice-dismiss {
+					background: none !important;
+					box-shadow: none !important;
+					opacity: 1;
+				}
+				
+				.contrax-lite-simple-notice .notice-dismiss:before {
+					color: #a7aaad;
+					padding: 0; 
+				}
+				
+				.contrax-lite-simple-notice .notice-dismiss:hover:before,
+				.contrax-lite-simple-notice .notice-dismiss:focus:before {
+					color: #c90000;
+				}
+			
 		<?php
+
+		$custom_style = ob_get_clean();
+
+		wp_add_inline_style( 'contrax-lite-theme-notice', $custom_style );
+		wp_register_script(
+			'contrax-lite-theme-notice',
+			'',
+			array( 'wp-api-fetch' ),
+			'1.0.0',
+			true
+		);
+
+		wp_enqueue_script( 'contrax-lite-theme-notice' );
+
+		ob_start();
+		
+		?>
+		
+		// Retain the core installation/activation logic script
+		var promises = [];
+		var actions = <?php echo wp_json_encode( $actions ); ?>;
+		let site_url = '<?php echo esc_url( admin_url() ); ?>';
+
+		const CONTRAXLITEPluginUtils = {
+			isVersionGreater(v1, v2) {
+				const a = v1.split('.').map(Number);
+				const b = v2.split('.').map(Number);
+				const len = Math.max(a.length, b.length);
+
+				for (let i = 0; i < len; i++) {
+					const n1 = a[i] ?? 0;
+					const n2 = b[i] ?? 0;
+					if (n1 > n2) return true;
+					if (n1 < n2) return false;
+				}
+				return false;
+			}
+		};
+
+		function sequenceInstall(plugin, pluginsInstalled) {
+			return new Promise((resolve, reject) => {
+				if (!plugin) return resolve();
+
+				const slug = plugin.slug;
+				const path = `${slug}/${slug}`;
+				const needUpdate = plugin.installed
+					? CONTRAXLITEPluginUtils.isVersionGreater(plugin.req_version, pluginsInstalled[`${path}.php`].Version)
+					: false;
+
+				let request;
+
+				if (needUpdate) {
+					wp.apiFetch({
+						path: `wp/v2/plugins/plugin?plugin=${path}`,
+						method: 'PUT',
+						data: { status: 'inactive' }
+					})
+						.then(() => {
+							return wp.apiFetch({
+								path: `wp/v2/plugins/plugin?plugin=${path}`,
+								method: 'DELETE'
+							});
+						})
+						.then(() => {
+							return wp.apiFetch({
+								path: 'wp/v2/plugins',
+								method: 'POST',
+								data: { slug, status: 'active' }
+							});
+						})
+						.then(() => resolve())
+						.catch((error) => {
+							console.error(`Failed to update plugin ${slug}:`, error);
+							resolve();
+						});
+				} else {
+					switch (actions[slug]) {
+						case 'active':
+							return resolve();
+
+						case 'inactive':
+							request = wp.apiFetch({
+								path: `wp/v2/plugins/plugin?plugin=${path}`,
+								method: 'POST',
+								data: { status: 'active' }
+							});
+							break;
+
+						default:
+							request = wp.apiFetch({
+								path: 'wp/v2/plugins',
+								method: 'POST',
+								data: { slug, status: 'active' }
+							});
+							break;
+					}
+
+					request
+						.then(() => resolve())
+						.catch((error) => {
+							console.error(`Failed to install/activate ${slug}:`, error);
+							resolve();
+						});
+				}
+			});
+		}
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const notice = document.querySelector('.notice.is-dismissible.contrax-lite-simple-notice');
+
+			if (notice) {
+				setTimeout(() => {
+					const dismissBtn = notice.querySelector('.notice-dismiss');
+					const nonce      = notice.getAttribute('data-nonce');
+
+					if (dismissBtn) {
+						dismissBtn.addEventListener('click', (e) => {
+							e.preventDefault();
+							jQuery.post(ajaxurl, {
+								action: 'contrax-lite_dismiss_notice',
+								_ajax_nonce: nonce
+							});
+						});
+					}
+				}, 100);
+			}
+			
+			const button = document.getElementById('gutenverse-install-plugin');
+			
+			if (!button) return;
+
+			button.addEventListener('click', function (e) {
+				// Prevent navigation/default action immediately
+				e.preventDefault(); 
+				
+				// Update button text to show loading/processing state
+				button.innerHTML = `<?php esc_html_e( 'Installing...', 'contrax-lite' ); ?>`;
+				button.classList.add('processing');
+
+				const warningEl = document.querySelector('.installing-warning');
+				if (warningEl) {
+					warningEl.style.display = 'block';
+				}
+
+				const hasFinishClass = button.classList.contains('finished');
+
+				if (!hasFinishClass) {
+					const pluginsRequired = <?php echo wp_json_encode( $plugins_required ); ?>;
+
+					const pluginsInstalled = <?php echo wp_json_encode( $all_plugin ); ?>;
+					let sequence = Promise.resolve();
+
+					pluginsRequired.forEach((plugin, index) => {
+						sequence = sequence.then(() => {
+							const statusEl = document.querySelector('.installing-status');
+							if (statusEl) {
+								statusEl.style.display = 'inline';
+								statusEl.innerHTML = `${index + 1}/${pluginsRequired.length} Installing ${plugin.title}`;
+							}
+							return sequenceInstall(plugin, pluginsInstalled);
+						});
+					});
+
+					sequence.then(() => {
+						window.location.href = site_url + 'admin.php?page=gutenverse-onboarding-wizard';
+		
+					}).catch(() => {
+						// Handle errors (optional: show error message)
+						const statusEl = document.querySelector('.installing-status');
+						if (statusEl) {
+							statusEl.style.display = 'none';
+						}
+						const warningEl = document.querySelector('.installing-warning');
+						if (warningEl) {
+							warningEl.style.display = 'none';
+						}
+						button.innerHTML = `<?php esc_html_e( 'Install Failed, Try Again', 'contrax-lite' ); ?>`;
+						button.classList.remove('processing');
+					});
+				}
+			});
+		});
+		
+		<?php
+		$custom_script = ob_get_clean();
+		wp_add_inline_script( 'contrax-lite-theme-notice', $custom_script );
+
+		?>
+		<div class="notice notice-info is-dismissible contrax-lite-simple-notice" data-nonce="<?php echo esc_attr( wp_create_nonce( "contrax-lite_dismiss" ) ); ?>">
+				<p>
+					<strong class="contrax-lite-notice-title"><?php esc_html_e( "Thank you For Installing Contrax Lite Theme", "contrax-lite" ); ?></strong>
+					<span class="contrax-lite-notice-description">
+						<?php esc_html_e( "Unlock the full potential of your website with the recommended plugins.", "contrax-lite" ); ?>
+						<br/>
+						<?php esc_html_e( "Activate it to explore exclusive extensions, ready-to-use demo templates, and powerful features that make building your site easier and more enjoyable.", "contrax-lite" ); ?>
+					</span>
+				</p>
+				<p>
+					<a href="#" class="button button-primary" id="gutenverse-install-plugin"><?php echo esc_html__( "Install Recommended Plugins", "contrax-lite" ); ?></a>
+					<span class="installing-status" style="margin-left: 10px; font-size: 13px; color: #666; display: none;"></span>
+				</p>
+				<p class="installing-warning" style="font-size: 12px; color: #666; display: none; margin-top: 5px;">
+					<i><?php esc_html_e( "Don\'t refresh the page when installing recommended plugins", "contrax-lite" ); ?></i>
+				</p>
+			</div>
+		<?php
+	}
+
+	/**
+	 * Dismiss Notice After closed.
+	 */
+	public function dismiss_notice() {
+		check_ajax_referer( 'contrax-lite_dismiss' );
+
+		if ( ! get_option( 'contrax-lite_dismiss_notice' ) ) {
+			update_option( 'contrax-lite_dismiss_notice', true );
+		}
+
+		wp_send_json_success();
 	}
     
     /**

@@ -1,0 +1,518 @@
+# Copyright (C) 2026 Jegstudio
+# This file is distributed under the GNU General Public License v3 or later..
+msgid ""
+msgstr ""
+"Project-Id-Version: Contrax Lite 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/contrax-lite-xyRlCcbJFZqb\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-28T02:20:46+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: contrax-lite\n"
+
+#. Theme Name of the theme
+#: style.css
+#: inc/class/class-init.php:2980
+msgid "Contrax Lite"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://gutenverse.com/themes/contrax-lite/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+#: inc/class/class-init.php:2981
+msgid "Contrax Lite is a Construction & Building Company WordPress Block Theme designed for businesses that want to create a strong and professional online presence. Built with full site editing and powered by Gutenverse, this theme offers a flexible and modern platform to showcase construction projects, company services, and expertise with a clean and structured layout. Whether you run a construction firm, contractor service, or property development business, Contrax Lite helps you present your work with clarity and credibility. It is ideal for contractors, builders, architects, engineering firms, and renovation specialists looking to expand their reach online. With responsive layouts, customizable block patterns, and well-organized pages, you can easily highlight projects, services, team members, and client testimonials. Optimized for performance and usability, Contrax Lite allows you to build a reliable website that reflects your brand and expertise in the Construction & Building Company sector. If you are looking for a scalable and professional solution, Contrax Lite is a dependable Construction & Building Company WordPress theme to support your business growth."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Jegstudio"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://gutenverse.com"
+msgstr ""
+
+#: inc/class/class-block-patterns.php:57
+msgid "Contrax Lite Core Patterns"
+msgstr ""
+
+#: inc/class/class-block-patterns.php:61
+msgid "Contrax Lite Gutenverse Patterns"
+msgstr ""
+
+#: inc/class/class-block-patterns.php:62
+msgid "Contrax Lite Gutenverse PRO Patterns"
+msgstr ""
+
+#: inc/class/class-init.php:2982
+msgid "Plugin Requirement"
+msgstr ""
+
+#: inc/class/class-init.php:2983
+msgid "This theme require some plugins. Please make sure all the plugin below are installed and activated."
+msgstr ""
+
+#: inc/class/class-init.php:2989
+msgid "Install Gutenverse Plugin"
+msgstr ""
+
+#: inc/class/class-init.php:2990
+msgid "Activate Gutenverse Plugin"
+msgstr ""
+
+#: inc/class/class-init.php:2991
+msgid "Gutenverse Plugin Installed"
+msgstr ""
+
+#: inc/class/class-init.php:3007
+#: inc/class/class-plugin-notice.php:90
+msgid "Gutenverse"
+msgstr ""
+
+#: inc/class/class-init.php:3008
+#: inc/class/class-plugin-notice.php:91
+msgid "GUTENVERSE – GUTENBERG BLOCKS AND WEBSITE BUILDER FOR SITE EDITOR, TEMPLATE LIBRARY, POPUP BUILDER, ADVANCED ANIMATION EFFECTS, COMPLETE FEATURE ECOSYSTEM, 45+ FREE USER-FRIENDLY BLOCKS"
+msgstr ""
+
+#: inc/class/class-init.php:3021
+#: inc/class/class-plugin-notice.php:104
+msgid "Gutenverse Form"
+msgstr ""
+
+#: inc/class/class-init.php:3022
+#: inc/class/class-plugin-notice.php:105
+msgid "GUTENVERSE FORM – FORM BUILDER FOR GUTENBERG BLOCK EDITOR, MULTI-STEP FORMS, CONDITIONAL LOGIC, PAYMENT, CALCULATION, 15+ FREE USER-FRIENDLY FORM BLOCKS"
+msgstr ""
+
+#: inc/class/class-init.php:3034
+#: inc/class/class-plugin-notice.php:117
+msgid "Gutenverse Companion"
+msgstr ""
+
+#: inc/class/class-init.php:3035
+#: inc/class/class-plugin-notice.php:118
+msgid "A companion plugin designed specifically to enhance and extend the functionality of Gutenverse base themes. This plugin integrates seamlessly with the base themes, providing additional features, customization options, and advanced tools to optimize the overall user experience and streamline the development process."
+msgstr ""
+
+#: inc/class/class-init.php:3061
+msgid "Contrax Pro"
+msgstr ""
+
+#: inc/class/class-init.php:3124
+msgid "You don't have any demo activated"
+msgstr ""
+
+#: inc/class/class-init.php:3192
+#: inc/class/class-init.php:3194
+#: inc/class/class-init.php:3195
+msgid "unknown"
+msgstr ""
+
+#: inc/class/class-init.php:3197
+msgid "by"
+msgstr ""
+
+#: inc/class/class-init.php:3219
+#: inc/class/class-init.php:3220
+msgid "Contrax Lite Dashboard"
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:347
+msgid "Installing..."
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:387
+msgid "Install Failed, Try Again"
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:401
+msgid "Thank you For Installing Contrax Lite Theme"
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:403
+msgid "Unlock the full potential of your website with the recommended plugins."
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:405
+msgid "Activate it to explore exclusive extensions, ready-to-use demo templates, and powerful features that make building your site easier and more enjoyable."
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:409
+msgid "Install Recommended Plugins"
+msgstr ""
+
+#: inc/class/class-plugin-notice.php:413
+msgid "Don\\'t refresh the page when installing recommended plugins"
+msgstr ""
+
+#: inc/patterns/contrax-archive-core-hero.php:6
+msgid "Contrax Archive Core Hero"
+msgstr ""
+
+#: inc/patterns/contrax-archive-gutenverse-hero.php:6
+msgid "Contrax Archive Gutenvese Hero"
+msgstr ""
+
+#: inc/patterns/contrax-footer-core-cta.php:6
+msgid "Contrax Footer Core CTA"
+msgstr ""
+
+#: inc/patterns/contrax-footer-core-footer.php:6
+msgid "Contrax Footer Core Footer"
+msgstr ""
+
+#: inc/patterns/contrax-footer-gutenverse-cta.php:6
+msgid "Contrax Footer Gutenvese CTA"
+msgstr ""
+
+#: inc/patterns/contrax-footer-gutenverse-footer.php:6
+msgid "Contrax Footer Gutenvese Footer"
+msgstr ""
+
+#: inc/patterns/contrax-gutenverse-funfact.php:6
+msgid "Contrax Gutenvese Funfact"
+msgstr ""
+
+#: inc/patterns/contrax-header-core-header.php:6
+msgid "Contrax Header Core Header"
+msgstr ""
+
+#: inc/patterns/contrax-header-gutenverse-header.php:6
+msgid "Contrax Header Gutenvese Header"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-about.php:6
+msgid "Contrax Home Core About"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-blog.php:6
+msgid "Contrax Home Core Blog"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-funfact.php:6
+msgid "Contrax Home Core Funfact"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-gallery.php:6
+msgid "Contrax Home Core Gallery"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-hero.php:6
+msgid "Contrax Home Core Hero"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-process.php:6
+msgid "Contrax Home Core Process"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-services.php:6
+msgid "Contrax Home Core Services"
+msgstr ""
+
+#: inc/patterns/contrax-home-core-testimonials.php:6
+msgid "Contrax Home Core Testimonials"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-about.php:6
+msgid "Contrax Home Gutenvese About"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-blog.php:6
+msgid "Contrax Home Gutenverse Blog"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-gallery.php:6
+msgid "Contrax Home Gutenvese Gallery"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-hero.php:6
+msgid "Contrax Home Gutenvese Hero"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-process.php:6
+msgid "Contrax Home Gutenvese Process"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-services.php:6
+msgid "Contrax Home Gutenvese Services"
+msgstr ""
+
+#: inc/patterns/contrax-home-gutenverse-testimonials.php:6
+msgid "Contrax Home Gutenvese Testimonials"
+msgstr ""
+
+#: inc/patterns/contrax-index-core-hero.php:6
+msgid "Contrax Index Core Hero"
+msgstr ""
+
+#: inc/patterns/contrax-index-gutenverse-hero.php:6
+msgid "Contrax Index Gutenvese Hero"
+msgstr ""
+
+#: inc/patterns/contrax-page-core-hero.php:6
+msgid "Contrax Page Core Hero"
+msgstr ""
+
+#: inc/patterns/contrax-page-gutenverse-hero.php:6
+msgid "Contrax Page Gutenvese Hero"
+msgstr ""
+
+#: inc/patterns/contrax-search-core-hero.php:6
+msgid "Contrax Search Core Hero"
+msgstr ""
+
+#: inc/patterns/contrax-search-gutenverse-hero.php:6
+msgid "Contrax Search Gutenvese Hero"
+msgstr ""
+
+#: inc/patterns/contrax-single-core-hero.php:6
+msgid "Contrax Single Core Hero"
+msgstr ""
+
+#: inc/patterns/contrax-single-gutenverse-hero.php:6
+msgid "Contrax Single Gutenvese Hero"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank Canvas"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent Hover"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Border Input"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background Tertiary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text Placeholder"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Text Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Text Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Accent"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Accent Hover"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Border"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Border Input"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Background Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Background Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Background Tertiary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Text Placeholder"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Dark Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "BG Alt (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "BG (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Hover (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Border (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Hover 2 (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Hover 3 (Legacy)"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Almarai"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XX LARGE"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr ""

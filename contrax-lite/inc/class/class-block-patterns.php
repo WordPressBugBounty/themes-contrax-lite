@@ -54,12 +54,12 @@ class Block_Patterns {
 	 */
 	private function register_block_patterns() {
 		$block_pattern_categories = array(
-			'contrax-lite-core' => array( 'label' => __( 'Contrax Lite Core Patterns', 'contrax-lite' ) ),
+			'contrax-lite-core' => array( 'label' => esc_html__( 'Contrax Lite Core Patterns', 'contrax-lite' ) ),
 		);
 
 		if ( defined( 'GUTENVERSE' ) ) {
-			$block_pattern_categories['contrax-lite-gutenverse'] = array( 'label' => __( 'Contrax Lite Gutenverse Patterns', 'contrax-lite' ) );
-			$block_pattern_categories['contrax-lite-pro'] = array( 'label' => __( 'Contrax Lite Gutenverse PRO Patterns', 'contrax-lite' ) );
+			$block_pattern_categories['contrax-lite-gutenverse'] = array( 'label' => esc_html__( 'Contrax Lite Gutenverse Patterns', 'contrax-lite' ) );
+			$block_pattern_categories['contrax-lite-pro'] = array( 'label' => esc_html__( 'Contrax Lite Gutenverse PRO Patterns', 'contrax-lite' ) );
 		}
 
 		$block_pattern_categories = apply_filters( 'contrax-lite_block_pattern_categories', $block_pattern_categories );
@@ -71,12 +71,42 @@ class Block_Patterns {
 		}
 
 		$block_patterns = array(
-            'contrax-home-core-hero',			'contrax-home-core-about',			'contrax-home-core-services',			'contrax-home-core-funfact',			'contrax-home-core-gallery',			'contrax-home-core-process',			'contrax-home-core-testimonials',			'contrax-home-core-blog',			'contrax-header-core-header',			'contrax-footer-core-cta',			'contrax-footer-core-footer',			'contrax-index-core-hero',			'contrax-page-core-hero',			'contrax-single-core-hero',
+			'contrax-home-core-hero',
+			'contrax-home-core-about',
+			'contrax-home-core-services',
+			'contrax-home-core-funfact',
+			'contrax-home-core-gallery',
+			'contrax-home-core-process',
+			'contrax-home-core-testimonials',
+			'contrax-home-core-blog',
+			'contrax-header-core-header',
+			'contrax-footer-core-cta',
+			'contrax-footer-core-footer',
+			'contrax-index-core-hero',
+			'contrax-page-core-hero',
+			'contrax-single-core-hero',
+			'contrax-archive-core-hero',
+			'contrax-search-core-hero',
 		);
 
 		if ( defined( 'GUTENVERSE' ) ) {
-            $block_patterns[] = 'contrax-home-gutenverse-hero';			$block_patterns[] = 'contrax-home-gutenverse-about';			$block_patterns[] = 'contrax-home-gutenverse-services';			$block_patterns[] = 'contrax-gutenverse-funfact';			$block_patterns[] = 'contrax-home-gutenverse-gallery';			$block_patterns[] = 'contrax-home-gutenverse-process';			$block_patterns[] = 'contrax-home-gutenverse-testimonials';			$block_patterns[] = 'contrax-home-gutenverse-blog';			$block_patterns[] = 'contrax-header-gutenverse-header';			$block_patterns[] = 'contrax-footer-gutenverse-cta';			$block_patterns[] = 'contrax-footer-gutenverse-footer';			$block_patterns[] = 'contrax-blog-gutenverse-hero';			$block_patterns[] = 'contrax-about-gutenverse-hero';			$block_patterns[] = 'contrax-gutenverse-funfact';			$block_patterns[] = 'contrax-about-gutenverse-mission-vision';			$block_patterns[] = 'contrax-about-gutenverse-about';			$block_patterns[] = 'contrax-about-gutenverse-team';			$block_patterns[] = 'contrax-single-gutenverse-hero';			$block_patterns[] = 'contrax-index-gutenverse-hero';			$block_patterns[] = 'contrax-page-gutenverse-hero';			$block_patterns[] = 'contrax-archive-gutenverse-hero';			$block_patterns[] = 'contrax-search-gutenverse-hero';
-            
+			$block_patterns[] = 'contrax-home-gutenverse-hero';
+			$block_patterns[] = 'contrax-home-gutenverse-about';
+			$block_patterns[] = 'contrax-home-gutenverse-services';
+			$block_patterns[] = 'contrax-gutenverse-funfact';
+			$block_patterns[] = 'contrax-home-gutenverse-gallery';
+			$block_patterns[] = 'contrax-home-gutenverse-process';
+			$block_patterns[] = 'contrax-home-gutenverse-testimonials';
+			$block_patterns[] = 'contrax-home-gutenverse-blog';
+			$block_patterns[] = 'contrax-header-gutenverse-header';
+			$block_patterns[] = 'contrax-footer-gutenverse-cta';
+			$block_patterns[] = 'contrax-footer-gutenverse-footer';
+			$block_patterns[] = 'contrax-single-gutenverse-hero';
+			$block_patterns[] = 'contrax-index-gutenverse-hero';
+			$block_patterns[] = 'contrax-page-gutenverse-hero';
+			$block_patterns[] = 'contrax-archive-gutenverse-hero';
+			$block_patterns[] = 'contrax-search-gutenverse-hero';
+			
 		}
 
 		$block_patterns = apply_filters( 'contrax-lite_block_patterns', $block_patterns );
@@ -85,6 +115,17 @@ class Block_Patterns {
 			$pattern_list = array();
 		}
 
+		$active_slug = get_stylesheet();
+		$inserted_content = get_option(
+			"gutenverse_{$active_slug}_content_inserted",
+			array(
+				'pages'    => array(),
+				'patterns' => array(),
+				'menus'    => array(),
+				'content_has_menus' => array(),
+			)
+		);
+
 		if ( function_exists( 'register_block_pattern' ) ) {
 			foreach ( $block_patterns as $block_pattern ) {
 				$pattern_file = get_theme_file_path( '/inc/patterns/' . $block_pattern . '.php' );
@@ -92,20 +133,58 @@ class Block_Patterns {
 
 				if ( (bool) $pattern_data['is_sync'] ) {
 					$post = get_page_by_path( $block_pattern . '-synced', OBJECT, 'wp_block' );
-					/**Download Image */
-					$content = wp_slash( $pattern_data['content'] );
-					if ( $pattern_data['images'] ) {
-						$images = json_decode( $pattern_data['images'] );
-						foreach ( $images as $key => $image ) {
-							$url  = $image->image_url;
-							$data = Helper::check_image_exist( $url );
-							if ( ! $data ) {
-								$data = Helper::handle_file( $url );
-							}
-							$content = str_replace( $url, $data['url'], $content );
-						}
-					}
+					$post_id = $post ? $post->ID : null;
 					if ( empty( $post ) ) {
+						/**Download Image */
+						$content = wp_slash( $pattern_data['content'] );
+						$image_importer_ver = $pattern_data['image_importer_ver'] ?? null;
+						if ( isset( $pattern_data['images'] ) && ! empty( $pattern_data['images'] ) ) {
+							$images = json_decode( $pattern_data['images'] );
+							if ( ! $image_importer_ver ) {
+								foreach ( $images as $key => $image ) {
+									$url  = $image->image_url;
+									$data = Helper::check_image_exist( $url );
+									if ( ! $data ) {
+										$data = Helper::handle_file( $url );
+									}
+									$content  = str_replace( $url, $data['url'], $content );
+									$image_id = $image->image_id;
+									if ( $image_id && 'null' !== $image_id ) {
+										$content = str_replace( '"imageId\":' . $image_id, '"imageId\":' . $data['id'], $content );
+									}
+								}
+							} else {
+								foreach ( $images as $key => $image ) {
+									$url     = $key;
+									$pattern = $image->pattern;
+									$data    = Helper::check_image_exist( $url );
+									if ( ! $data ) {
+										$data = Helper::handle_file( $url );
+									}
+									foreach ( $pattern as $p ) {
+										$placeholder_arr        = explode( '|', trim( $p, '{}' ) );
+										$placeholder_value_type = end( $placeholder_arr );
+										switch ( $placeholder_value_type ) {
+											case 'url':
+												$placeholder_data_type = $placeholder_arr[1];
+												if ( 'case2' === $placeholder_data_type ) {
+													$placeholder_data_size = $placeholder_arr[3];
+													$target                = wp_get_attachment_image_url( $data['id'], $placeholder_data_size );
+												} else {
+													$target = wp_get_attachment_url( $data['id'] );
+												}
+												break;
+											case 'id':
+											default:
+												$target = $data['id'];
+												break;
+										}
+										$content = str_replace( $p, $target, $content );
+									}
+								}
+							}
+						}
+						$content = $this->decode_unicode_sequences($content);
 						$post_id = wp_insert_post(
 							array(
 								'post_name'    => $block_pattern . '-synced',
@@ -116,9 +195,16 @@ class Block_Patterns {
 								'post_type'    => 'wp_block',
 							)
 						);
+						if ( isset( $pattern_data['placeholder'] ) ) {
+							$inserted_content['patterns'][] = array(
+								'id' => $post_id,
+								'is_remapped' => false,
+								'placeholder' => ! empty( $pattern_data['placeholder'] ) ? $pattern_data['placeholder'] : '',
+							);
+						}
 						if ( ! is_wp_error( $post_id ) ) {
 							$pattern_category = $pattern_data['categories'];
-							foreach( $pattern_category as $category ){
+							foreach ( $pattern_category as $category ) {
 								wp_set_object_terms( $post_id, $category, 'wp_pattern_category' );
 							}
 						}
@@ -127,7 +213,19 @@ class Block_Patterns {
 						$pattern_data['slug']     = $block_pattern;
 
 						$pattern_list[] = $pattern_data;
+						/**Check if content has menu */
+						$normalized_content = wp_unslash( $content );
+						preg_match_all(
+							'/"menuId"\s*:\s*(?:"(\d+)"|(\d+))/',
+							$normalized_content,
+							$matches
+						);
+
+						if ( ! empty( array_filter( array_merge( $matches[1], $matches[2] ) ) ) ) {
+							$inserted_content['content_has_menus'][] = $post_id;
+						}
 					}
+					
 				} else {
 					register_block_pattern(
 						'contrax-lite/' . $block_pattern,
@@ -135,8 +233,43 @@ class Block_Patterns {
 					);
 				}
 			}
+			
 			update_option( 'contrax-lite_synced_pattern_imported', $pattern_list );
+			update_option(
+				"gutenverse_{$active_slug}_content_inserted",
+				$inserted_content
+			);
 		}
+	}
+
+	/**
+	 * Decode unicode sequences
+	 *
+	 * @param string $content .
+	 * @return string
+	 */
+	private function decode_unicode_sequences( $content ) {
+		return preg_replace_callback(
+			'/\\\\u([0-9a-fA-F]{4})/',
+			function ( $matches ) {
+
+				$hex = strtolower( $matches[1] );
+
+				// Always keep quotes escaped.
+				if ( '0022' === $hex ) {
+					return '\"';
+				}
+
+				$codepoint = hexdec( $hex );
+
+				return mb_convert_encoding(
+					pack( 'n', $codepoint ),
+					'UTF-8',
+					'UTF-16BE'
+				);
+			},
+			$content
+		);
 	}
 
 	/**

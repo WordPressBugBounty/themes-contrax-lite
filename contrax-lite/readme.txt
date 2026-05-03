@@ -1,19 +1,18 @@
 === Contrax Lite ===
 Contributors: Jegstudio
-Requires at least: 6.2
-Tested up to: 6.6
-Requires PHP: 7.0
+Requires at least: 6.5
+Tested up to: 6.9
+Requires PHP: 7.4.21
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-Contrax Lite is a sleek and fully responsive theme template designed for WordPress full-site editing, fully optimized for the Gutenverse plugin. Contrax Lite is crafted specifically for construction firms, engineering companies, and independent contractors seeking a modern and professional online presence. This template package includes both a core version and a Gutenverse plugin version, offering pre-designed block patterns that make it easy to customize your site without needing to start from scratch. We’ve designed Contrax Lite to streamline your website creation process, making WordPress full-site editing a seamless and intuitive experience.
-
+Contrax Lite is a Construction & Building Company WordPress Block Theme designed for businesses that want to create a strong and professional online presence. Built with full site editing and powered by Gutenverse, this theme offers a flexible and modern platform to showcase construction projects, company services, and expertise with a clean and structured layout. Whether you run a construction firm, contractor service, or property development business, Contrax Lite helps you present your work with clarity and credibility. It is ideal for contractors, builders, architects, engineering firms, and renovation specialists looking to expand their reach online. With responsive layouts, customizable block patterns, and well-organized pages, you can easily highlight projects, services, team members, and client testimonials. Optimized for performance and usability, Contrax Lite allows you to build a reliable website that reflects your brand and expertise in the Construction & Building Company sector. If you are looking for a scalable and professional solution, Contrax Lite is a dependable Construction & Building Company WordPress theme to support your business growth.
 
 == Copyright ==
 
-Contrax Lite, 2024 Jegstudio
+Contrax Lite, 2026 Jegstudio
 Contrax Lite is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -50,8 +49,8 @@ Self designed images,
 *Image 21 : contrax-lite/assets/img/user-icon.svg
 
 
-Declaring these self designed images under GPL license version 2.0 =
-License URL: http://www.gnu.org/licenses/gpl-2.0.html
+Declaring these self designed images under GPL license version 3.0 =
+License URL: http://www.gnu.org/licenses/gpl-3.0.html
 
 Icon for theme screenshot,
 License: (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -148,24 +147,28 @@ Source: https: https://pxhere.com/en/photo/1265273
 
 == Changelog ==
 
-= 1.0.5 - 2024-11-15 =
+= 1.1.0 =
+* Update theme dashboard
+* Remove unused gutenverse templates
+
+= 1.0.5 =
 * Update dashboard
 
-= 1.0.4 - 2024-11-14 =
+= 1.0.4 =
 * Update tags
 
-= 1.0.3 - 2024-11-05 =
+= 1.0.3 =
 * Update admin notice
 * Update tags
 
-= 1.0.2 - 2024-10-30 =
+= 1.0.2 =
 * Update admin notice
 * Update underline links
 * Update tags
 
-= 1.0.1 - 2024-10-14 =
+= 1.0.1 =
 * Update skip link
 * Update underline links
 
-= 1.0.0 - 2024-10-03 =
+= 1.0.0 =
 * Initial release
