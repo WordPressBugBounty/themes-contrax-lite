@@ -12,7 +12,7 @@ return array(
 <div class="wp-block-group" style="min-height:474px"><!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":289,"width":"120px","sizeSlug":"full","linkDestination":"none","className":"contrax-shape-image"} -->
-<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-up.webp" alt="masking up" class="wp-image-289" style="width:120px"/></figure>
+<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-up-e1777952146870.webp" alt="masking up" class="wp-image-289" style="width:120px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -40,7 +40,7 @@ return array(
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":290,"width":"120px","sizeSlug":"full","linkDestination":"none","className":"contrax-shape-image"} -->
-<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-down.webp" alt="masking down" class="wp-image-290" style="width:120px"/></figure>
+<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-down-e1777952159417.webp" alt="masking down" class="wp-image-290" style="width:120px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

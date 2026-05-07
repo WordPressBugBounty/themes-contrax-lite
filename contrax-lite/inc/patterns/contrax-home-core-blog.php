@@ -22,8 +22,8 @@ return array(
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"className":"contrax-h2 contrax-responsive-padding-two-0","style":{"typography":{"fontSize":"56px","lineHeight":"1.3","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"padding":{"right":"80px"},"margin":{"top":"0px","bottom":"0px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
-<h2 class="wp-block-heading contrax-h2 contrax-responsive-padding-two-0 has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:0px;margin-bottom:0px;padding-right:80px;font-size:56px;font-style:normal;font-weight:600;line-height:1.3;text-transform:uppercase">Insights into Construction</h2>
+<!-- wp:heading {"level":3,"className":"contrax-h2 contrax-responsive-padding-two-0","style":{"typography":{"fontSize":"56px","lineHeight":"1.3","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"padding":{"right":"80px"},"margin":{"top":"0px","bottom":"0px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
+<h3 class="wp-block-heading contrax-h2 contrax-responsive-padding-two-0 has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:0px;margin-bottom:0px;padding-right:80px;font-size:56px;font-style:normal;font-weight:600;line-height:1.3;text-transform:uppercase">Insights into Construction</h3>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -54,7 +54,7 @@ return array(
 
 <!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|gv-color-primary"}}},"spacing":{"padding":{"top":"20px","bottom":"10px","left":"0px","right":"0px"},"margin":{"top":"0px","bottom":"0px"}},"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"600"}},"textColor":"gv-color-primary","fontFamily":"almarai"} /-->
 
-<!-- wp:post-title {"level":4,"isLink":true,"className":"contrax-blog","style":{"typography":{"fontStyle":"normal","fontWeight":"600","fontSize":"26px","lineHeight":"1.2"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"margin":{"bottom":"5px","top":"0px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} /-->
+<!-- wp:post-title {"level":3,"isLink":true,"className":"contrax-blog","style":{"typography":{"fontStyle":"normal","fontWeight":"600","fontSize":"26px","lineHeight":"1.2"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"margin":{"bottom":"5px","top":"0px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} /-->
 
 <!-- wp:post-date {"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}},"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"textColor":"gv-color-text-secondary","fontFamily":"almarai"} /-->
 

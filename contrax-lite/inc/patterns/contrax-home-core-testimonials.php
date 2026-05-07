@@ -33,7 +33,7 @@ return array(
 <!-- /wp:group -->
 
 <!-- wp:image {"id":2287,"width":"65px","sizeSlug":"full","linkDestination":"none","className":"hide-in-mobile"} -->
-<figure class="wp-block-image size-full is-resized hide-in-mobile"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/quote-left-shape.png" alt="" class="wp-image-2287" style="width:65px"/></figure>
+<figure class="wp-block-image size-full is-resized hide-in-mobile"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/quote-left-shape.webp" alt="quote left shape" class="wp-image-2287" style="width:65px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>

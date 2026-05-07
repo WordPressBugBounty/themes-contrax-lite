@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-defined( 'CONTRAX_LITE_VERSION' ) || define( 'CONTRAX_LITE_VERSION', '1.1.0' );
+defined( 'CONTRAX_LITE_VERSION' ) || define( 'CONTRAX_LITE_VERSION', '1.1.1' );
 defined( 'CONTRAX_LITE_DIR' ) || define( 'CONTRAX_LITE_DIR', trailingslashit( get_template_directory() ) );
 
 defined( 'GUTENVERSE_COMPANION_REQUIRED_VERSION' ) || define( 'GUTENVERSE_COMPANION_REQUIRED_VERSION', '2.3.3' );

@@ -11,7 +11,7 @@ return array(
 <div class="wp-block-group" style="min-height:380px"><!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":289,"width":"100px","sizeSlug":"full","linkDestination":"none","className":"contrax-shape-image"} -->
-<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-up.webp" alt="masking up" class="wp-image-289" style="width:100px"/></figure>
+<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-up-e1777952146870.webp" alt="masking up" class="wp-image-289" style="width:100px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -23,7 +23,7 @@ return array(
 <div class="wp-block-group is-style-single-post"><!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"5px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-bottom:5px"><!-- wp:image {"id":2340,"width":"16px","sizeSlug":"full","linkDestination":"none","style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/user-icon-shape.webp" alt="user icon shape" class="wp-image-2340" style="width:16px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/user-icon-shape-e1777967191588.webp" alt="user icon shape" class="wp-image-2340" style="width:16px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -33,7 +33,7 @@ return array(
 <!-- wp:group {"className":"contrax-responsive-single-date","style":{"spacing":{"blockGap":"10px","padding":{"right":"25px","left":"25px","top":"5px","bottom":"5px"}},"border":{"right":{"color":"var:preset|color|gv-color-border","width":"1px"},"left":{"color":"var:preset|color|gv-color-border","width":"1px"},"top":[],"bottom":[]}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group contrax-responsive-single-date" style="border-right-color:var(--wp--preset--color--gv-color-border);border-right-width:1px;border-left-color:var(--wp--preset--color--gv-color-border);border-left-width:1px;padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"6px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-bottom:6px"><!-- wp:image {"id":2338,"width":"16px","aspectRatio":"0.8571428571428571","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/calendar-days-shape.webp" alt="calendar days " class="wp-image-2338" style="aspect-ratio:0.8571428571428571;object-fit:cover;width:16px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/calendar-days-shape-e1777967212945.webp" alt="calendar days" class="wp-image-2338" style="aspect-ratio:0.8571428571428571;object-fit:cover;width:16px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -43,7 +43,7 @@ return array(
 <!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"6px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-bottom:6px"><!-- wp:image {"id":2339,"width":"20px","aspectRatio":"1.1333333333333333","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/folder-open-shape.webp" alt="folder open shape" class="wp-image-2339" style="aspect-ratio:1.1333333333333333;object-fit:cover;width:20px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/folder-open-shape-e1777967415762.webp" alt="folder open shape" class="wp-image-2339" style="aspect-ratio:1.1333333333333333;object-fit:cover;width:20px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -55,7 +55,7 @@ return array(
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":290,"width":"100px","sizeSlug":"full","linkDestination":"none","className":"contrax-shape-image"} -->
-<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-down.webp" alt="masking down" class="wp-image-290" style="width:100px"/></figure>
+<figure class="wp-block-image size-full is-resized contrax-shape-image"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/masking-down-e1777952159417.webp" alt="masking down" class="wp-image-290" style="width:100px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

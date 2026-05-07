@@ -147,6 +147,9 @@ Source: https: https://pxhere.com/en/photo/1265273
 
 == Changelog ==
 
+= 1.1.1 =
+* Improved: Overall performance and SEO optimization
+
 = 1.1.0 =
 * Update theme dashboard
 * Remove unused gutenverse templates

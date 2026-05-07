@@ -23,8 +23,8 @@ return array(
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"className":"contrax-h2 contrax-responsive-padding-two-0","style":{"typography":{"fontSize":"56px","lineHeight":"1.3","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"padding":{"right":"80px"},"margin":{"top":"0px","bottom":"0px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
-<h2 class="wp-block-heading contrax-h2 contrax-responsive-padding-two-0 has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:0px;margin-bottom:0px;padding-right:80px;font-size:56px;font-style:normal;font-weight:600;line-height:1.3;text-transform:uppercase">Our Expert Service Range</h2>
+<!-- wp:heading {"level":3,"className":"contrax-h2 contrax-responsive-padding-two-0","style":{"typography":{"fontSize":"56px","lineHeight":"1.3","fontStyle":"normal","fontWeight":"600","textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"padding":{"right":"80px"},"margin":{"top":"0px","bottom":"0px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
+<h3 class="wp-block-heading contrax-h2 contrax-responsive-padding-two-0 has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:0px;margin-bottom:0px;padding-right:80px;font-size:56px;font-style:normal;font-weight:600;line-height:1.3;text-transform:uppercase">Our Expert Service Range</h3>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -35,7 +35,7 @@ return array(
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"lightbox":{"enabled":false},"id":2283,"width":"36px","sizeSlug":"full","linkDestination":"custom","style":{"color":{"duotone":"var:preset|duotone|grayscale"}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/arrow-up-right-shape.webp" alt="arrow up right shape" class="wp-image-2283" style="width:36px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/arrow-up-right-shape-e1777953215796.webp" alt="arrow up right shape" class="wp-image-2283" style="width:36px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -45,7 +45,7 @@ return array(
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"lightbox":{"enabled":false},"id":2283,"width":"36px","sizeSlug":"full","linkDestination":"custom","style":{"color":{"duotone":"var:preset|duotone|grayscale"}}} -->
-<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/arrow-up-right-shape.webp" alt="arrow up right shape" class="wp-image-2283" style="width:36px"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/arrow-up-right-shape-e1777953215796.webp" alt="arrow up right shape" class="wp-image-2283" style="width:36px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -60,8 +60,8 @@ return array(
 <figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/outline-helmet-shape.webp" alt="outline helmet shape" class="wp-image-2286" style="width:52px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"style":{"typography":{"fontSize":"26px","lineHeight":"1.2","fontStyle":"normal","fontWeight":"600","textTransform":"none"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"margin":{"top":"20px","bottom":"15px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
-<h2 class="wp-block-heading has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:20px;margin-bottom:15px;font-size:26px;font-style:normal;font-weight:600;line-height:1.2;text-transform:none">Project Oversight</h2>
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"26px","lineHeight":"1.2","fontStyle":"normal","fontWeight":"600","textTransform":"none"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"margin":{"top":"20px","bottom":"15px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
+<h3 class="wp-block-heading has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:20px;margin-bottom:15px;font-size:26px;font-style:normal;font-weight:600;line-height:1.2;text-transform:none">Project Oversight</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"contrax-text","style":{"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-secondary"}}},"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"300"}},"textColor":"gv-color-text-secondary","fontFamily":"almarai"} -->
@@ -76,8 +76,8 @@ return array(
 <figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/license-line-shape.webp" alt="license line shape" class="wp-image-2285" style="width:52px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"style":{"typography":{"fontSize":"26px","lineHeight":"1.2","fontStyle":"normal","fontWeight":"600","textTransform":"none"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"margin":{"top":"20px","bottom":"15px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
-<h2 class="wp-block-heading has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:20px;margin-bottom:15px;font-size:26px;font-style:normal;font-weight:600;line-height:1.2;text-transform:none">Green Certification</h2>
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"26px","lineHeight":"1.2","fontStyle":"normal","fontWeight":"600","textTransform":"none"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-primary"}}},"spacing":{"margin":{"top":"20px","bottom":"15px"}}},"textColor":"gv-color-text-primary","fontFamily":"almarai"} -->
+<h3 class="wp-block-heading has-gv-color-text-primary-color has-text-color has-link-color has-almarai-font-family" style="margin-top:20px;margin-bottom:15px;font-size:26px;font-style:normal;font-weight:600;line-height:1.2;text-transform:none">Green Certification</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"contrax-text","style":{"elements":{"link":{"color":{"text":"var:preset|color|gv-color-text-secondary"}}},"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"300"}},"textColor":"gv-color-text-secondary","fontFamily":"almarai"} -->
@@ -92,8 +92,8 @@ return array(
 <figure class="wp-block-image size-full is-resized"><img src="' . esc_url( trailingslashit( get_template_directory_uri() ) ) . 'assets/img/construction-shape.webp" alt="construction shape" class="wp-image-2284" style="width:52px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"style":{"typography":{"fontSize":"26px","lineHeight":"1.2","fontStyle":"normal","fontWeight":"600","textTransform":"none"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"20px","bottom":"15px"}}},"textColor":"white","fontFamily":"almarai"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-link-color has-almarai-font-family" style="margin-top:20px;margin-bottom:15px;font-size:26px;font-style:normal;font-weight:600;line-height:1.2;text-transform:none">Safety Audits</h2>
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"26px","lineHeight":"1.2","fontStyle":"normal","fontWeight":"600","textTransform":"none"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"20px","bottom":"15px"}}},"textColor":"white","fontFamily":"almarai"} -->
+<h3 class="wp-block-heading has-white-color has-text-color has-link-color has-almarai-font-family" style="margin-top:20px;margin-bottom:15px;font-size:26px;font-style:normal;font-weight:600;line-height:1.2;text-transform:none">Safety Audits</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"contrax-text","style":{"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"300"},"elements":{"link":{"color":{"text":"var:preset|color|gv-color-accent-hover"}}}},"textColor":"gv-color-accent-hover","fontFamily":"almarai"} -->
